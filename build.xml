@@ -23,6 +23,8 @@
 		<copy todir="${work.home}">
 			<fileset dir="${web.home}"/>
 		</copy>
+		<echo>*** Updated By Gaurav : prepare target ** -> ${work.home} + ${dist.home} + ${war.home} + ${web.home}</echo>
+		
 	</target>
 
 	<target name="compile" 
@@ -34,7 +36,7 @@
 		<copy  todir="${work.home}/WEB-INF/classes">
 			<fileset dir="${src.home}" excludes="**/*.java"/>
 		</copy>
-
+		<echo>*** Updated By Gaurav : complie target ** -> ${src.home}</echo>
 	</target>
 
 	<!-- Define the CLASSPATH -->
@@ -54,6 +56,7 @@
 			<classes dir="${work.home}/WEB-INF/classes"/>
 		</war>
 		<copy file="${war.home}/${app.name}.war" todir="${dist.home}" overwrite="true" />
+		<echo>*** Updated By Gaurav : war target ** -> ${app.name}</echo>
 	</target>
 
 	<target name="ear" >
@@ -65,6 +68,7 @@
 		<!--<delete file="${dist.home}/${app.name}.war" /> --> 
 		<delete dir="${war.home}" />
 		<delete dir="${work.home}" />
+		<echo>*** Updated By Gaurav : ear target ** -> ${app.home} + ${work.home}</echo>
 	</target>
 	
 </project>
