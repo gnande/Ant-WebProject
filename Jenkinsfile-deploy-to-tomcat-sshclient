@@ -10,7 +10,7 @@ pipeline
 			{
 				withAnt(installation: 'ANT_HOME', jdk: 'localjdk') {
 				
-						sh 'init build.xml'
+						sh 'init build'
 					}
 			}
 			
