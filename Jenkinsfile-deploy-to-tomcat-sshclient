@@ -3,14 +3,29 @@ pipeline
 	agent any
 	stages
 	{
+	
+		stage('build ant project')
+		{
+			steps 
+			{
+				withAnt(installation: 'ANT_HOME', jdk: 'localjdk') {
+				
+						sh 'init'
+					}
+			}
+			
+		}
+	
+	
 		stage('build ant project. Yooo !!!')
 		{
 			steps
 			{
-				
+				sshagent(['deploytomcatsshagent']) {
+				sh 'scp -o StrictHostKeyChecking=no' */target/*.war ec2-user@172.31.37.179:/var/lib/tomcat/webapps
+					}
 			}
 		}
 	
-	}
-	
+	}	
 }
