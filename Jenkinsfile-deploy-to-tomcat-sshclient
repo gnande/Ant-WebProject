@@ -10,14 +10,14 @@ pipeline
 			{
 				withAnt(installation: 'ANT_HOME', jdk: 'localjdk') {
 				
-						sh 'init build'
+						sh 'ant build'
 					}
 			}
 			
 		}
 	
 	
-		stage ('build ant project. Yooo !!!')
+		stage ('Deploy war file to tomcat. Yooo !!!')
 		{
 			steps
 			{
