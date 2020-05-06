@@ -4,7 +4,7 @@ pipeline
 	stages
 	{
 	
-		stage('build ant project')
+		stage ('build ant project')
 		{
 			steps 
 			{
@@ -17,7 +17,7 @@ pipeline
 		}
 	
 	
-		stage('build ant project. Yooo !!!')
+		stage ('build ant project. Yooo !!!')
 		{
 			steps
 			{
