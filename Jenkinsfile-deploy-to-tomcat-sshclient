@@ -23,7 +23,7 @@ pipeline
 			{
 				//Deploy SampleAntProject.war from jenkin server to tomcat server.
 				sshagent(['deploytomcatsshagent']) {
-				sh 'scp -o StrictHostKeyChecking=no */jenkins/workspace/pipeline-ant-build-deploytomcat-job/dist/*.war ec2-user@172.31.37.179:/var/lib/tomcat/webapps'
+				sh 'scp -o StrictHostKeyChecking=no /var/lib/jenkins/workspace/pipeline-ant-build-deploytomcat-job/dist/*.war ec2-user@172.31.37.179:/var/lib/tomcat/webapps'
 					}
 			}
 		}
